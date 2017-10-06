@@ -9,7 +9,7 @@
   "author": "Gergely Imreh <imrehg@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "ipfs": "^0.26.0",
+    "ipfs-api": "^14.3.5",
     "node-blinkt": "^1.0.1"
   }
 }

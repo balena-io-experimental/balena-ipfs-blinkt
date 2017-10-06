@@ -1,0 +1,11 @@
+[Unit]
+Description=IPFS daemon
+After=network.target
+
+[Service]
+EnvironmentFile=/usr/src/app/IPFS_ENV
+ExecStart=/usr/bin/ipfs daemon --init --enable-pubsub-experiment --enable-gc
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
