@@ -40,7 +40,18 @@ const receiveMsg = (msg) => {
         leds.sendUpdate();
     }
 }
-ipfs.pubsub.subscribe(topic, receiveMsg)
+
+var startup = () => {
+    ipfs.id(function (err, identity) {
+        if (err) {
+            console.log(err)
+            setTimeout(function(){ startu(); }, 5000);
+        }
+        console.log(identity)
+        ipfs.pubsub.subscribe(topic, receiveMsg, (err) => {console.log('Could not subscribe..')})
+    })
+}
+
 
 // Periodically show peers
 setInterval(function(){
