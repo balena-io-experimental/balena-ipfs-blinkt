@@ -45,10 +45,18 @@ var startup = () => {
     ipfs.id(function (err, identity) {
         if (err) {
             console.log(err)
-            setTimeout(function(){ startu(); }, 5000);
+            setTimeout(function(){ startup(); }, 5000);
         }
+        console.log("Identity:")
         console.log(identity)
         ipfs.pubsub.subscribe(topic, receiveMsg, (err) => {console.log('Could not subscribe..')})
+        ipfs.pubsub.ls((err, topics) => {
+            if (err) {
+                throw err
+            }
+            console.log("Subscribed topics:")
+            console.log(topics)
+        })
     })
 }
 
