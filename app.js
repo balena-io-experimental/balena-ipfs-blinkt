@@ -38,6 +38,10 @@ const receiveMsg = (msg) => {
         leds.setAllPixels(0, 0, 255, 0.7);
         leds.sendUpdate();
         leds.sendUpdate();
+    } else if (data === 'off') {
+        leds.setAllPixels(0, 0, 0, 0);
+        leds.sendUpdate();
+        leds.sendUpdate();
     }
 }
 
@@ -60,7 +64,7 @@ var startup = () => {
         }
     })
 }
-
+startup()
 
 // Periodically show peers
 setInterval(function(){
