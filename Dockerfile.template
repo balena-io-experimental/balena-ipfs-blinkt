@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-node
+FROM resin/%%RESIN_MACHINE_NAME%%-node
 
 WORKDIR /usr/src/app
 ENV INITSYSTEM=on
@@ -18,4 +18,3 @@ COPY . ./
 RUN systemctl enable ipfs.service
 
 CMD ["node", "app.js"]
-# CMD while : ; do echo "idling..."; sleep 600; done
