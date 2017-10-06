@@ -1,0 +1,15 @@
+{
+  "name": "resin-ipfs-blinkt",
+  "version": "1.0.0",
+  "description": "resin.io + ipfs pubsub + blinkt demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gergely Imreh <imrehg@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ipfs": "^0.26.0",
+    "node-blinkt": "^1.0.1"
+  }
+}
