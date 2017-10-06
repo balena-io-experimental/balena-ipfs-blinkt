@@ -46,17 +46,18 @@ var startup = () => {
         if (err) {
             console.log(err)
             setTimeout(function(){ startup(); }, 5000);
+        } else {
+            console.log("Identity:")
+            console.log(identity)
+            ipfs.pubsub.subscribe(topic, receiveMsg, (err) => {console.log('Could not subscribe..')})
+            ipfs.pubsub.ls((err, topics) => {
+                if (err) {
+                    throw err
+                }
+                console.log("Subscribed topics:")
+                console.log(topics)
+            })
         }
-        console.log("Identity:")
-        console.log(identity)
-        ipfs.pubsub.subscribe(topic, receiveMsg, (err) => {console.log('Could not subscribe..')})
-        ipfs.pubsub.ls((err, topics) => {
-            if (err) {
-                throw err
-            }
-            console.log("Subscribed topics:")
-            console.log(topics)
-        })
     })
 }
 
