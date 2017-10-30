@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 ENV INITSYSTEM=on
 
 ENV IPFS_VERSION=0.4.11
-RUN    curl -O https://ipfs.io/ipns/dist.ipfs.io/go-ipfs/v0.4.11/go-ipfs_v${IPFS_VERSION}_linux-arm.tar.gz \
+RUN    curl -O https://ipfs.io/ipns/dist.ipfs.io/go-ipfs/v${IPFS_VERSION}/go-ipfs_v${IPFS_VERSION}_linux-arm.tar.gz \
     && tar xzvf go-ipfs_v${IPFS_VERSION}_linux-arm.tar.gz \
     && cp go-ipfs/ipfs /usr/bin/ipfs \
     && rm -rf go-ipfs*
