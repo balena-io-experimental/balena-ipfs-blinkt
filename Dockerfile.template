@@ -3,7 +3,7 @@ FROM resin/%%RESIN_MACHINE_NAME%%-node
 WORKDIR /usr/src/app
 ENV INITSYSTEM=on
 
-ENV IPFS_VERSION=0.4.11
+ENV IPFS_VERSION=0.4.13
 RUN    curl -O https://ipfs.io/ipns/dist.ipfs.io/go-ipfs/v${IPFS_VERSION}/go-ipfs_v${IPFS_VERSION}_linux-arm.tar.gz \
     && tar xzvf go-ipfs_v${IPFS_VERSION}_linux-arm.tar.gz \
     && cp go-ipfs/ipfs /usr/bin/ipfs \
